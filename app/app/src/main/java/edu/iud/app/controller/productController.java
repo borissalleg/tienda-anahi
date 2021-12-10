@@ -1,0 +1,24 @@
+package edu.iud.app.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import edu.iud.app.model.productModel;
+import edu.iud.app.repository.productRepository;
+
+@RestController
+@RequestMapping(value="/productos")
+public class productController {
+    @Autowired
+    productRepository productos; 
+
+    @GetMapping(value = "/listar")
+    public List<productModel> listarProductos(){
+        System.out.println("Listando productos");
+         return productos.findAll();
+    }
+}

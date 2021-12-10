@@ -25,8 +25,9 @@ public class userModel {
     @Column( nullable = false, length = 50)
     String password;
 
+
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_UserType", referencedColumnName = "id")
+    @JoinColumn(name = "fk_user", referencedColumnName = "id_user_type")
     private userTypeModel idUsertype;
 
 
