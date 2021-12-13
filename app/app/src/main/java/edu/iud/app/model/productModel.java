@@ -2,6 +2,7 @@ package edu.iud.app.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +24,7 @@ public class productModel {
     @Column(name = "descripcion_producto", nullable = false, length = 250)
     String descripcionProducto;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "FK_catproducto", nullable = false, updatable = false)
     categoryModel categoriaProducto;
 
@@ -31,6 +32,9 @@ public class productModel {
 
     public productModel() {
     }
+
+    
+
 
     public int getIdProducto() {
         return this.idProducto;
