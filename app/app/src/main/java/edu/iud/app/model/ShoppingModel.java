@@ -26,6 +26,9 @@ public class ShoppingModel {
     @JoinColumn(name = "fk_formas_pago", referencedColumnName = "id_forma_pago")
     PaymentModel formaDePago;
 
+      
+    @OneToOne(mappedBy = "id_compras")
+    private  InvoiceModel id_factura; 
 
 
     public ShoppingModel() {
@@ -50,6 +53,22 @@ public class ShoppingModel {
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public PaymentModel getFormaDePago() {
+        return this.formaDePago;
+    }
+
+    public void setFormaDePago(PaymentModel formaDePago) {
+        this.formaDePago = formaDePago;
+    }
+
+    public InvoiceModel getId_factura() {
+        return this.id_factura;
+    }
+
+    public void setId_factura(InvoiceModel id_factura) {
+        this.id_factura = id_factura;
     }
 
 }

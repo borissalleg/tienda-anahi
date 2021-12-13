@@ -27,6 +27,8 @@ public class productModel {
     @JoinColumn(name = "FK_catproducto", nullable = false, updatable = false)
     categoryModel categoriaProducto;
 
+    
+
     public productModel() {
     }
 
