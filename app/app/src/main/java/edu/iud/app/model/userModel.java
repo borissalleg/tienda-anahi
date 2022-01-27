@@ -1,5 +1,7 @@
 package edu.iud.app.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_usuario")
-public class userModel {
+public class userModel implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

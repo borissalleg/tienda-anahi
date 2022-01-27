@@ -1,6 +1,8 @@
 package edu.iud.app.model;
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_tipousuario")
-public class userTypeModel {
+public class userTypeModel implements Serializable {
     
     @Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)

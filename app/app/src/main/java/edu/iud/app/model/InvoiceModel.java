@@ -1,5 +1,7 @@
 package edu.iud.app.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,13 +11,13 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+// import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 
 @Entity
 @Table(name = "tbl_facturas")
-public class InvoiceModel {
+public class InvoiceModel implements Serializable {
    
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
